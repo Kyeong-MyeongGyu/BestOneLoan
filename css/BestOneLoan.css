@@ -1,0 +1,344 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* 슬라이더 영역 */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider, .gradient-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out;
+    z-index: 2;
+    opacity: 0;
+}
+
+.gradient-bg {
+    background: linear-gradient(270deg, #eb86ff, #878dff, #8afff7, #87ffa1);
+    z-index: 1;
+    opacity: 1;
+}
+
+.slider-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 3;
+}
+
+.brand-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #f2f2f2;
+    z-index: 4;
+}
+
+.brand-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+.brand-text p {
+    font-size: 1.3rem;
+    margin-top: -1.5rem;
+}
+#contact { 
+    margin-top: 5rem; 
+}
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    color: #fff;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
+}
+
+/* 소개 문구 */
+.company-intro {
+    margin: 50px auto 30px auto;
+    max-width: 700px;
+    padding: 0 20px;
+}
+.company-intro h3 {
+    font-size: 1.6rem;
+}
+.company-intro p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* 상품 섹션 */
+.product-section {
+    padding: 40px 20px;
+}
+.product-section h2::after {
+    content: "보다 자세한 사항은 홈페이지 상단 또는 하단에 안내된 전화 및 팩스 번호로 문의해 주시기 바랍니다.";
+    display: block;
+    font-size: 1rem;
+    color: #555;
+    margin-top: 8px;
+}
+.product-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.product {
+  width: 360px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.product img {
+  width: 100%;
+  max-height: 240px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product p {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-placeholder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background-color: #f0f0f0;
+  z-index: 1;
+  text-align: center;
+  padding: 5px;
+}
+
+@media (max-width: 480px) {
+  .product {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .product img {
+    max-height: 200px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .product p {
+    font-size: 1rem;
+  }
+}
+
+footer {
+  background-color: #212529;
+  color: white;
+  margin-top: 2.5rem;
+  padding: 30px 20px 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 40px;
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+
+.footer-meta p {
+  margin: 4px 0;
+  white-space: nowrap;
+}
+
+.footer-notice {
+  font-size: 0.75rem;
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  line-height: 1.4;
+}
+
+#license {
+  color: rgb(180, 180, 180);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+#license button {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 5px;
+}
+#license button:hover {
+  color: white;
+}
+
+/* ✅ 반응형 (모바일 대응) */
+@media (max-width: 640px) {
+  .footer-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-meta p {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* 모달 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 520px;
+  margin: 10% auto;
+  position: relative;
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(30px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* show가 붙으면 등장 애니메이션 작동 */
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-content h3 {
+  font-size: 1.2rem;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+.modal-content li {
+  margin-bottom: 10px;
+}
+
+.modal-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+.modal-content a:hover {
+  text-decoration: underline;
+}
+
+.modal-content p {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: #f0f0f0;
+  color: #333;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 32px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.close:hover {
+  background: #ddd;
+}
